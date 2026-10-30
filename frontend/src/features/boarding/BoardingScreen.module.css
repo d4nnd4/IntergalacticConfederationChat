@@ -1,0 +1,223 @@
+.screen {
+  min-height: 100%;
+  padding: 40px clamp(16px, 4vw, 56px) 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.masthead {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+}
+
+.kicker {
+  margin-top: 8px;
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--paper-dim);
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(34px, 6vw, 72px);
+  line-height: 1;
+  letter-spacing: 0.01em;
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.45);
+}
+
+.subtitle {
+  margin: 4px 0 0;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.error {
+  padding: 12px 16px;
+  border: 1px solid var(--ember);
+  background: rgba(11, 10, 18, 0.85);
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+.shelf {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 24px;
+  width: min(1180px, 100%);
+}
+
+.card {
+  --sky: linear-gradient(180deg, #0b0a12 0%, #2b1550 30%, #6d2a78 60%, #ef7a2a 100%);
+  --ground: linear-gradient(180deg, #f6a02d, #c4561f);
+  --sun-color: #ffd166;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  aspect-ratio: 2 / 3.1;
+  padding: 0;
+  border: 0;
+  border-radius: 2px;
+  overflow: hidden;
+  text-align: left;
+  background: var(--ink);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.15) inset,
+    0 24px 40px -20px rgba(0, 0, 0, 0.9);
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.card[data-palette="tide"] {
+  --sky: linear-gradient(180deg, #120b1f 0%, #6d2a78 25%, #ef5a2a 60%, #f6a02d 80%);
+  --ground: linear-gradient(180deg, #2fb3d0, #0f4f7a);
+  --sun-color: #fff1c9;
+}
+
+.card[data-palette="drought"] {
+  --sky: linear-gradient(180deg, #0b0a12 0%, #4a0c0c 30%, #8e1b1b 55%, #e0532d 100%);
+  --ground: linear-gradient(180deg, #f7c46b, #c8742a);
+  --sun-color: #ffe7b0;
+}
+
+.card:hover,
+.card:focus-visible {
+  transform: translateY(-6px) rotate(-0.4deg);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.15) inset,
+    0 34px 50px -20px rgba(0, 0, 0, 0.95);
+}
+
+.cardBand {
+  display: flex;
+  flex-direction: column;
+  padding: 14px 16px 12px;
+  gap: 2px;
+}
+
+.cardKicker {
+  font-size: 11px;
+  color: var(--paper-dim);
+}
+
+.cardName {
+  font-family: var(--font-display);
+  font-size: 24px;
+  line-height: 1.05;
+}
+
+.cardRace {
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.art {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+  background: var(--sky);
+}
+
+.sun {
+  position: absolute;
+  left: 50%;
+  bottom: 22%;
+  width: 70%;
+  aspect-ratio: 1;
+  transform: translate(-50%, 50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--sun-color) 0%, transparent 65%);
+  opacity: 0.6;
+}
+
+.rings {
+  inset: 18% -10% auto;
+  width: 120%;
+  height: 40%;
+}
+
+.ground {
+  position: absolute;
+  inset: auto 0 0;
+  height: 26%;
+  background: var(--ground);
+}
+
+.shadow {
+  position: absolute;
+  left: 50%;
+  bottom: 20%;
+  width: 52%;
+  height: 7%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(0, 0, 0, 0.55), transparent 70%);
+  transition: transform 260ms ease;
+}
+
+.figure {
+  position: absolute;
+  left: 50%;
+  bottom: 22%;
+  width: 46%;
+  height: auto;
+  transform: translateX(-50%);
+  filter: drop-shadow(0 6px 0 rgba(0, 0, 0, 0.25));
+  transition: transform 260ms ease;
+}
+
+.card:hover .figure,
+.card:focus-visible .figure {
+  transform: translate(-50%, -10px);
+}
+
+.card:hover .shadow,
+.card:focus-visible .shadow {
+  transform: translateX(-50%) scale(0.8);
+}
+
+.bio {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 12px 14px;
+  font-size: 12.5px;
+  line-height: 1.4;
+  color: var(--paper);
+  background: linear-gradient(180deg, transparent, rgba(11, 10, 18, 0.92) 30%);
+  transform: translateY(100%);
+  transition: transform 260ms ease;
+}
+
+.card:hover .bio,
+.card:focus-visible .bio {
+  transform: translateY(0);
+}
+
+.foot {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 14px;
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  color: var(--paper-dim);
+}
+
+@media (hover: none) {
+  .bio {
+    transform: none;
+  }
+}

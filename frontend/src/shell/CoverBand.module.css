@@ -1,0 +1,143 @@
+.band {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 24px;
+  min-height: var(--band-height);
+  padding: 10px clamp(16px, 3vw, 40px);
+  background: var(--ink);
+  border-bottom: 1px solid rgba(244, 236, 216, 0.12);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.kicker {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--paper-dim);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 26px;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+}
+
+.tab {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 6px 16px 8px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: none;
+  color: var(--paper-dim);
+  transition:
+    color 150ms ease,
+    border-color 150ms ease;
+}
+
+.tab:hover {
+  color: var(--paper);
+}
+
+.tab[aria-current="page"] {
+  color: var(--paper);
+  border-bottom-color: var(--amber);
+}
+
+.tabNumber {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.tabLabel {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.delegate {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.delegateText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.delegateName {
+  font-family: var(--font-display);
+  font-size: 15px;
+}
+
+.delegateRace {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--paper-dim);
+}
+
+@media (max-width: 1080px) {
+  .delegateText {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .band {
+    grid-template-columns: 1fr auto;
+    gap: 8px;
+  }
+
+  .tabs {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-content: space-between;
+  }
+
+  .tab {
+    padding: 4px 6px 6px;
+  }
+
+  .tabLabel {
+    font-size: 12px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+}

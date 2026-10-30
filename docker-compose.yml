@@ -1,0 +1,49 @@
+name: ic-comms
+
+services:
+  rabbitmq:
+    image: rabbitmq:4.0-management-alpine
+    hostname: rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_USER:-ic}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASS:-ic}
+    volumes:
+      - ./rabbitmq/enabled_plugins:/etc/rabbitmq/enabled_plugins:ro
+      - rabbitmq-data:/var/lib/rabbitmq
+    ports:
+      - "127.0.0.1:${RABBITMQ_UI_PORT:-15672}:15672"
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "-q", "check_port_connectivity"]
+      interval: 10s
+      timeout: 10s
+      retries: 12
+      start_period: 20s
+    restart: unless-stopped
+
+  backend:
+    build: ./backend
+    environment:
+      RABBITMQ_HOST: rabbitmq
+      RABBITMQ_USER: ${RABBITMQ_USER:-ic}
+      RABBITMQ_PASS: ${RABBITMQ_PASS:-ic}
+      IC_ALLOWED_ORIGINS: ${IC_ALLOWED_ORIGINS:-http://localhost:[*],http://127.0.0.1:[*]}
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+    deploy:
+      resources:
+        limits:
+          memory: 512m
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "${IC_PORT:-8080}:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  rabbitmq-data:

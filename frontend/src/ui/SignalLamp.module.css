@@ -1,0 +1,59 @@
+.lamp {
+  --lamp: var(--amber);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--paper-dim);
+}
+
+.lamp[data-status="online"] {
+  --lamp: #6ee7a8;
+}
+
+.lamp[data-status="offline"] {
+  --lamp: var(--ember);
+}
+
+.bulb {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #fff, var(--lamp) 60%);
+  box-shadow: 0 0 10px var(--lamp);
+}
+
+.bulb::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1px solid var(--lamp);
+  animation: ping 2s ease-out infinite;
+}
+
+.lamp[data-status="online"] .bulb::after {
+  animation-duration: 3.2s;
+}
+
+@keyframes ping {
+  from {
+    transform: scale(0.6);
+    opacity: 0.9;
+  }
+  to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 960px) {
+  .label {
+    display: none;
+  }
+}

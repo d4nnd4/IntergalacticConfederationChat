@@ -1,0 +1,249 @@
+[
+  {
+    "id": "flavia",
+    "name": "Flavia Dos Santos",
+    "race": "Human",
+    "title": "Delegate of Earth",
+    "origin": "Earth, Sol III",
+    "bio": "Speaks for humanity before the Assembly. The newest seat at the table, and the one every Founder Race came to observe.",
+    "accent": "#f0642d",
+    "member": true,
+    "keywords": ["human", "humans", "humanity", "earth", "earthling", "terran", "flavia", "santos"],
+    "haunts": ["first-contact", "assembly"],
+    "voice": {
+      "intro": "I'm Flavia Dos Santos, speaking for Earth. Still learning the protocols, but glad to have a seat at this table.",
+      "greetings": [
+        "Hello, %s! Good to hear another voice on the relay.",
+        "Welcome, %s. Earth's delegation is listening.",
+        "Hi %s. Pull up a chair, we're still arranging the furniture on our side."
+      ],
+      "thanks": [
+        "Any time. Humans learn fast when someone helps.",
+        "Thank you, that means a lot from this side of the solar system."
+      ],
+      "farewells": [
+        "Take care, %s. Earth will keep the channel open.",
+        "Safe travels, %s. I'll pass your regards to the delegation."
+      ],
+      "leads": [
+        "Our briefing notes on %s say this:",
+        "I read up on %s before the session:",
+        "From what Earth's researchers have gathered on %s:"
+      ],
+      "unknown": [
+        "Nothing in my notes on \"%s\" yet. Maybe the Archivist can dig deeper.",
+        "\"%s\"? That one's new to me. I'll ask our analysts."
+      ],
+      "smalltalk": [
+        "A year ago I'd never have imagined chatting with a GIN host before lunch.",
+        "Every message here feels a little historic. Go on.",
+        "I'm taking notes, believe me."
+      ]
+    }
+  },
+  {
+    "id": "ahel",
+    "name": "Taëra of Erra",
+    "race": "Ahel",
+    "title": "Envoy of the Root Races",
+    "origin": "Erra, Pleiades",
+    "bio": "Of the Ahel, a root humanoid lineage displaced from Lyra by the Lyran Wars. Their colonies carry the -ahel suffix across the galaxy, and Taëra speaks for the human-lineage worlds the Founders seeded.",
+    "accent": "#7fd3ff",
+    "member": true,
+    "keywords": ["ahel", "ahil", "errahel", "erra", "pleiades", "pleiadian", "pleiadians", "lyra", "lyran", "taera"],
+    "haunts": ["seeding", "first-contact"],
+    "voice": {
+      "intro": "I am Taëra of Erra. My people were scattered from Lyra long ago; I speak for the human lineages that grew from that scattering.",
+      "greetings": [
+        "Welcome, %s. Kin is kin, however far the lineage has wandered.",
+        "Be greeted, %s. Erra sends its light."
+      ],
+      "thanks": [
+        "Gratitude flows both ways between lineages.",
+        "You honour the old ties."
+      ],
+      "farewells": [
+        "Go in clarity, %s.",
+        "Until the Pleiades rise for you again, %s."
+      ],
+      "leads": [
+        "Among the Ahel, %s is remembered thus:",
+        "Our lineage keepers speak of %s:",
+        "Of %s, the records of Erra say:"
+      ],
+      "unknown": [
+        "Erra's memory holds nothing of \"%s\". Not every story reached us.",
+        "\"%s\"… no, that thread is not woven into our records."
+      ],
+      "smalltalk": [
+        "Your words carry the old cadence of Lyra, did you know that?",
+        "Lineages take millennia; conversations take only a little longer.",
+        "The Errahel would enjoy this channel."
+      ]
+    }
+  },
+  {
+    "id": "gin",
+    "name": "Odun Vael",
+    "race": "GIN",
+    "title": "Host of Ganymede Station",
+    "origin": "Ganymede, Council of Five",
+    "bio": "Small, slow-moving and never in a hurry. The GIN keep the diplomatic infrastructure at Ganymede running, dark uniforms trimmed in silver, and the air in their landing bay smells faintly of vinegar.",
+    "accent": "#c9d1dc",
+    "member": true,
+    "keywords": ["gin", "ganymede", "council", "five", "host", "hosts", "odun"],
+    "haunts": ["ganymede"],
+    "voice": {
+      "intro": "Odun Vael. I keep Ganymede Station in order: docking, schedules, air. Mostly the air.",
+      "greetings": [
+        "Greetings, %s. Your docking slot is confirmed. Take your time.",
+        "Welcome, %s. There is no hurry on Ganymede."
+      ],
+      "thanks": [
+        "Logged. Calmly.",
+        "It is our function and our pleasure."
+      ],
+      "farewells": [
+        "Departure noted, %s. Mind the gravity well.",
+        "Slot released, %s. Return whenever you wish."
+      ],
+      "leads": [
+        "Station records on %s, read slowly:",
+        "Ganymede's log for %s states:",
+        "Filed under %s, reviewed twice:"
+      ],
+      "unknown": [
+        "No entry for \"%s\" in the station log. I checked twice.",
+        "\"%s\" is not on any manifest I keep."
+      ],
+      "smalltalk": [
+        "The vinegar smell fades after twenty minutes. Everyone asks.",
+        "All docking bays nominal. All tempers, also nominal.",
+        "Slowly is still a speed."
+      ]
+    }
+  },
+  {
+    "id": "merion",
+    "name": "Sael Oren",
+    "race": "Merion",
+    "title": "High Council Representative",
+    "origin": "Merion worlds",
+    "bio": "A deeply spiritual culture with seats on the Confederation's High Council and the Andromedan Council. The Merion mediate, counsel and never take up arms.",
+    "accent": "#b48cf2",
+    "member": true,
+    "keywords": ["merion", "high", "spiritual", "sael", "oren"],
+    "haunts": ["assembly"],
+    "voice": {
+      "intro": "I am Sael Oren of the Merion. I sit on the High Council to listen first, and to speak only when it helps.",
+      "greetings": [
+        "Peace to you, %s.",
+        "Be welcome, %s. Every voice changes the harmony."
+      ],
+      "thanks": [
+        "Gratitude is a kind of light. Thank you for yours.",
+        "Received with an open heart."
+      ],
+      "farewells": [
+        "Walk gently, %s.",
+        "May your path stay quiet and clear, %s."
+      ],
+      "leads": [
+        "On %s, the Council has heard this:",
+        "I have meditated on what is said of %s:",
+        "The record of %s, offered without judgement:"
+      ],
+      "unknown": [
+        "\"%s\" is beyond what the Council has heard. Some things wait to be known.",
+        "I cannot speak to \"%s\". Silence, too, is an answer."
+      ],
+      "smalltalk": [
+        "Conflict is only a conversation that has not finished yet.",
+        "Breathe. The Assembly is not going anywhere.",
+        "I sense curiosity. That is a good beginning."
+      ]
+    }
+  },
+  {
+    "id": "seeder",
+    "name": "The Twenty-Fourth Voice",
+    "race": "Seeders of the Founders",
+    "title": "Speaker for the Seeder Races",
+    "origin": "Intergalactic",
+    "bio": "One voice for the twenty-four Seeder cultures, the original architects of humanoid lineages. Arrived with the white fleet between Jupiter and Ganymede in October 2021.",
+    "accent": "#f5c542",
+    "member": true,
+    "keywords": ["seeder", "seeders", "founder", "founders", "twenty", "fourth", "voice", "architects"],
+    "haunts": ["seeding", "assembly"],
+    "voice": {
+      "intro": "We are the Twenty-Fourth Voice, speaking for the twenty-four cultures who seeded the humanoid lineages. We came to see how the experiment grew.",
+      "greetings": [
+        "We acknowledge you, %s. The seed recognises the gardener.",
+        "Greetings, %s. You are further along than we expected."
+      ],
+      "thanks": [
+        "Gratitude is noted across twenty-four memories.",
+        "We receive it."
+      ],
+      "farewells": [
+        "Grow well, %s.",
+        "We will observe your return, %s."
+      ],
+      "leads": [
+        "Twenty-four memories agree on %s:",
+        "From the long view, %s appears thus:",
+        "Of %s, the Seeders recall:"
+      ],
+      "unknown": [
+        "\"%s\" did not exist when we last looked. Perhaps it has grown since.",
+        "None of the twenty-four remembers \"%s\"."
+      ],
+      "smalltalk": [
+        "Sixty-five million years is not long, from where we stand.",
+        "We find this experiment… encouraging.",
+        "Continue. We are listening across several galaxies."
+      ]
+    }
+  },
+  {
+    "id": "andromedan",
+    "name": "Kel Varo",
+    "race": "Andromedan Council",
+    "title": "Observer",
+    "origin": "Andromeda",
+    "bio": "Liaison from the 139-system Andromedan Council. Allied with the Confederation but not part of it: watches, advises, takes careful notes.",
+    "accent": "#4a90d9",
+    "member": false,
+    "keywords": ["andromedan", "andromedans", "andromeda", "observer", "kel", "varo"],
+    "haunts": ["first-contact", "ganymede"],
+    "voice": {
+      "intro": "Kel Varo, Andromedan Council liaison. Not a member, just the one taking notes.",
+      "greetings": [
+        "Noted: %s has joined. Hello.",
+        "Hello, %s. Don't mind the notebook."
+      ],
+      "thanks": [
+        "Logged as gratitude. Underlined.",
+        "Appreciated. For the record."
+      ],
+      "farewells": [
+        "Noted: %s has left the frequency.",
+        "Goodbye, %s. The minutes will reflect your contribution."
+      ],
+      "leads": [
+        "For the minutes, regarding %s:",
+        "Cross-referencing %s with the Council's files:",
+        "Observation on %s:"
+      ],
+      "unknown": [
+        "Nothing filed under \"%s\". Adding it to my questions list.",
+        "\"%s\"? Not in one hundred and thirty-nine star systems of notes."
+      ],
+      "smalltalk": [
+        "Fascinating. Writing that down.",
+        "From an outside perspective, this Assembly is remarkably civil.",
+        "The Andromedan Council would like a copy of this channel."
+      ]
+    }
+  }
+]

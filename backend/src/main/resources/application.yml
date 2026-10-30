@@ -1,0 +1,75 @@
+spring:
+  application:
+    name: ic-comms
+  main:
+    banner-mode: off
+  threads:
+    virtual:
+      enabled: true
+  jackson:
+    default-property-inclusion: non_null
+  rabbitmq:
+    host: ${RABBITMQ_HOST:localhost}
+    port: ${RABBITMQ_PORT:5672}
+    username: ${RABBITMQ_USER:ic}
+    password: ${RABBITMQ_PASS:ic}
+    listener:
+      simple:
+        prefetch: 50
+        default-requeue-rejected: false
+
+server:
+  port: 8080
+  shutdown: graceful
+  forward-headers-strategy: framework
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      probes:
+        enabled: true
+
+ic:
+  allowed-origins: ${IC_ALLOWED_ORIGINS:http://localhost:[*],http://127.0.0.1:[*]}
+  stomp:
+    host: ${RABBITMQ_HOST:localhost}
+    port: ${RABBITMQ_STOMP_PORT:61613}
+    login: ${RABBITMQ_USER:ic}
+    passcode: ${RABBITMQ_PASS:ic}
+    virtual-host: /
+  chat:
+    history-size: 200
+    max-message-length: 1000
+    burst: 8
+    refill-every: 1s
+    channels:
+      - id: assembly
+        name: The Assembly
+        topic: Open floor of the Confederation
+      - id: ganymede
+        name: Ganymede Station
+        topic: Docking, logistics and diplomatic schedules
+      - id: seeding
+        name: Seeding Council
+        topic: Lineages, genetics and the Earth experiment
+      - id: first-contact
+        name: First Contact
+        topic: Soft-contact operations and disclosure
+  bot:
+    max-question-length: 300
+    summary-sentences: 3
+    summary-max-chars: 900
+    concurrency: 2-6
+  delegates:
+    concurrency: 1-4
+  wiki:
+    api-url: https://en.ikwipedia.org/api.php
+    article-base-url: https://en.ikwipedia.org/wiki/
+    timeout: 6s
+    cache-ttl: 30m
+    cache-size: 500
+    user-agent: IC-Comms/1.0 (educational chat demo)

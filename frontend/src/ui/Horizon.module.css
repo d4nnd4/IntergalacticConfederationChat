@@ -1,0 +1,55 @@
+.horizon {
+  --sky: linear-gradient(180deg, #0b0a12 0%, #2b1550 28%, #6d2a78 52%, #c2416b 70%, #ef7a2a 84%);
+  --ground: linear-gradient(180deg, #f6a02d 0%, #e5782a 45%, #b9521f 100%);
+  --sun: radial-gradient(circle, #fff1c9 0%, #ffd166 40%, rgba(255, 209, 102, 0) 70%);
+  --horizon-line: 78%;
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  contain: strict;
+}
+
+.horizon[data-scene="archive"] {
+  --sky: linear-gradient(180deg, #08102e 0%, #0f1d5c 30%, #1d4f8a 58%, #2a8a8c 82%);
+  --ground: linear-gradient(180deg, #1f6f6e 0%, #134c50 50%, #0b2c33 100%);
+  --sun: radial-gradient(circle, #e7fffb 0%, #5fd0c8 35%, rgba(95, 208, 200, 0) 70%);
+}
+
+.horizon[data-scene="arcade"] {
+  --sky: linear-gradient(180deg, #120404 0%, #4a0c0c 30%, #8e1b1b 55%, #e0532d 78%, #f6a02d 90%);
+  --ground: linear-gradient(180deg, #f7c46b 0%, #e89a3c 50%, #a8591f 100%);
+}
+
+.sky {
+  position: absolute;
+  inset: 0 0 calc(100% - var(--horizon-line));
+  background: var(--sky);
+  transition: background 600ms ease;
+}
+
+.sun {
+  position: absolute;
+  left: 50%;
+  top: var(--horizon-line);
+  width: min(70vw, 900px);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  background: var(--sun);
+  opacity: 0.55;
+}
+
+.ground {
+  position: absolute;
+  inset: var(--horizon-line) 0 0;
+  background: var(--ground);
+  box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.35);
+}
+
+.grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.08;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}

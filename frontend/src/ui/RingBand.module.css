@@ -1,0 +1,17 @@
+.band {
+  position: absolute;
+  pointer-events: none;
+  stroke: #f0d9a0;
+  stroke-width: 1.4;
+  vector-effect: non-scaling-stroke;
+  opacity: 0.55;
+}
+
+.band line:nth-child(2) {
+  stroke: #c9a45a;
+  stroke-width: 2.2;
+}
+
+.band line:nth-child(3) {
+  opacity: 0.6;
+}

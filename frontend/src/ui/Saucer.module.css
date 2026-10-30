@@ -1,0 +1,54 @@
+.saucer {
+  display: block;
+  overflow: visible;
+}
+
+.hover {
+  animation: bob 3.6s ease-in-out infinite;
+}
+
+.lights circle {
+  fill: var(--sun);
+  animation: blink 1.5s steps(2, jump-none) infinite;
+}
+
+.lights circle:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.lights circle:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.lights circle:nth-child(4) {
+  animation-delay: 0.9s;
+}
+
+.lights circle:nth-child(5) {
+  animation-delay: 1.2s;
+}
+
+.beam {
+  transform-origin: 32px 38px;
+  animation: beam 2.2s ease-in-out infinite;
+}
+
+@keyframes bob {
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes blink {
+  50% {
+    fill: #fff3c4;
+    opacity: 0.35;
+  }
+}
+
+@keyframes beam {
+  50% {
+    opacity: 0.55;
+    transform: scaleX(0.9);
+  }
+}
